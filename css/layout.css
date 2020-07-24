@@ -1,62 +1,68 @@
-body {
-    width: 480px;
+#overall-container{
+    width: 100%;
+    justify-content: stretch;
     margin: auto;
+    display: grid;
+    grid-template: 75px 150px 125px 125px 250px 250px 80px / 1fr 1fr
 }
 
-header{
-    min-height: 75px;
-    line-height: 75px;
+.a, .b, .c, .d, .i {
+    grid-column: 1 / -1;
 }
 
-aside{
-    min-height: 150px;
-    line-height: 150px;
-}
+@media (min-width: 500px){
+    .a{
+        background-color: green;
+    }
+    .b{
+        background-color: blue;
+    }
+    .c, .d{
+        background-color: greenyellow;
+    }
 
-.top-container{
-    min-height: 125px;
-    line-height: 125px;
-}
+    .e, .f, .g, .h{
+        background-color: hotpink;
+    }
 
-.mid-container-one, .mid-container-two{
-    min-height: 250px;
-    line-height: 250px;
-    width: 50%;
-    float: left;
-}
-
-.bottom-container{
-    min-height: 80px;
-    line-height: 80px; 
-}
+    .i {
+        background-color: lavender;
+    }
+} 
 
 @media (min-width: 960px){
-    main{
-        background-color: gray;
+    div{
+        background-color: gray !important;
     }
 
-    main:after{
-        content: "";
-        display: table;
-        clear: both;
+    #overall-container{
+        width: 100%;
+        justify-content: center;
+        margin: 0 auto;
+        grid-template: 100px 200px 250px 150px / 200px repeat(4, 1fr)  
     }
 
-    body {
-        width: 960px;
-        margin: auto;
-    }
-    aside{
-        width: 200px;
-        float: left;
+    .a{
+        grid-column: 1 / -1;
     }
 
-    aside div{
-        border-width: 0 !important;
+    .b{
+        grid-column: 1 / 2;
+        grid-row: 2 / -1;
     }
 
-    .large-container{
-        width: 760px;
-        float: right;
+    .c{
+        grid-column: 2 / 4;
+        grid-row: 2 / 3;
     }
 
+    .d{
+        grid-column: 4 / -1;
+        grid-row: 2 / 3;
+    }
+
+    .i{
+        grid-column: 2 / -1;
+        grid-row: -2 / -1;
+    }
 }

@@ -1,39 +1,16 @@
 body {
     width: 480px;
     margin: auto;
+    display: grid;
+    grid-template: 75px 150px 125px 125px 250px 250px 80px / 1fr 1fr
 }
 
-header{
-    min-height: 75px;
-    line-height: 75px;
-}
-
-aside{
-    min-height: 150px;
-    line-height: 150px;
-}
-
-.top-container{
-    min-height: 125px;
-    line-height: 125px;
-}
-
-.mid-container-one, .mid-container-two{
-    min-height: 250px;
-    line-height: 250px;
-    width: 50%;
-    float: left;
-}
-
-.bottom-container{
-    min-height: 80px;
-    line-height: 80px; 
+.a, .b, .c, .d, .i {
+    grid-column: 1 / -1;
 }
 
 @media (min-width: 960px){
-    main{
-        background-color: gray;
-    }
+
 
     main:after{
         content: "";
